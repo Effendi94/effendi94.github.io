@@ -8,7 +8,7 @@ function closeWebView(base64) {
     console.log(data);
     // Print.postMessage(data);
     window.addEventListener("flutterInAppWebViewPlatformReady", function () {
-        window.flutter_inappwebview.callHandler("shareHandler", data);
+        window.flutter_inappwebview.callHandler("shareHandler", ...data);
     });
     console.log("### JS RUN ###");
 }
