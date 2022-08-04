@@ -5,7 +5,7 @@ function closeWebView(base64) {
             data: base64,
         },
     ];
-    // console.log(data);
+    console.log(data);
     // Print.postMessage(data);
     window.addEventListener("flutterInAppWebViewPlatformReady", function () {
         window.flutter_inappwebview.callHandler("shareHandler", data);
