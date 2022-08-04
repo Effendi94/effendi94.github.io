@@ -4,10 +4,9 @@ function closeWebView(base64) {
         type: "share",
         data: base64,
     };
-    console.log(data);
-    Print.postMessage(data);
+    // console.log(data);
+    // Print.postMessage(data);
+    window.addEventListener("flutterInAppWebViewPlatformReady", function () {
+        window.flutter_inappwebview.callHandler("shareHandler", data);
+    });
 }
-
-window.addEventListener("flutterInAppWebViewPlatformReady", function () {
-    window.flutter_inappwebview.callHandler("shareHandler", closeWebView);
-});
