@@ -3,6 +3,7 @@ function closeWebView(base64) {
         type: "share",
         data: base64,
     };
-    console.log(data);
-    Print.postMessage(data);
+    const sendData = JSON.stringify(data);
+    console.log(sendData);
+    Print.postMessage(sendData);
 }
