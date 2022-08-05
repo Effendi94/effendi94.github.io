@@ -4,7 +4,7 @@ window.addEventListener("flutterInAppWebViewPlatformReady", function () {
     isFlutterInAppWebViewReady = true;
 });
 
-function closeWebView(base64) {
+async function closeWebView(base64) {
     const data = [
         {
             type: "share",
