@@ -1,3 +1,9 @@
+var isFlutterInAppWebViewReady = false;
+
+window.addEventListener("flutterInAppWebViewPlatformReady", function () {
+    isFlutterInAppWebViewReady = true;
+});
+
 function closeWebView(base64) {
     const data = [
         {
@@ -5,10 +11,10 @@ function closeWebView(base64) {
             data: base64,
         },
     ];
-    console.log(data);
     // Print.postMessage(data);
-    window.addEventListener("flutterInAppWebViewPlatformReady", function () {
-        window.flutter_inappwebview.callHandler("shareHandler", ...data);
-    });
+
     console.log("### JS RUN ###");
+    if (isFlutterInAppWebViewReady) {
+        window.flutter_inappwebview.callHandler("shareHandler", ...data);
+    }
 }
